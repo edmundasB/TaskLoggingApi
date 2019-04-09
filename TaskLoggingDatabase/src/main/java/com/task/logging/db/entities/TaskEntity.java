@@ -11,13 +11,13 @@ import java.util.Set;
 public class TaskEntity implements Serializable {
     @Id
     @GeneratedValue
-    private Long id;
+    private long id;
     private String name;
     @ManyToOne( fetch = FetchType.EAGER)
     private GroupEntity logGroup;
     @ManyToOne( fetch = FetchType.EAGER)
     private AssigneeEntity assignee;
-    @OneToMany(mappedBy="logTask", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy="logTask", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<LogEntity> logs;
     @OneToMany(mappedBy="parent", fetch = FetchType.EAGER)
     private Set<TaskEntity> subTasks;
@@ -88,6 +88,9 @@ public class TaskEntity implements Serializable {
     }
 
     public List<LogEntity> getLogs() {
+        if(logs == null){
+            logs = new ArrayList<>();
+        }
         return logs;
     }
 

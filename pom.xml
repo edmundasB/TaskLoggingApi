@@ -12,10 +12,19 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <org.modelmapper.version>0.7.5</org.modelmapper.version>
+        <spring-boot.version>2.1.3.RELEASE</spring-boot.version>
     </properties>
 	<modules>
 		<module>TaskLoggingDatabase</module>
 		<module>TaskLoggingRest</module>
         <module>TaskLoggingCore</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>${org.modelmapper.version}</version>
+        </dependency>
+    </dependencies>
 </project>

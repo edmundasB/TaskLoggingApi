@@ -5,6 +5,7 @@ public class Task {
     private String name;
     private String groupName;
     private String assigneeName;
+    private String logedTime;
     private boolean isFinished;
 
     public Task() {
@@ -14,6 +15,15 @@ public class Task {
         this.name = name;
         this.groupName = groupName;
         this.assigneeName = assigneeName;
+    }
+
+    public Task(long id, String name, String groupName, String assigneeName, String logedTime, boolean isFinished) {
+        this.id = id;
+        this.name = name;
+        this.groupName = groupName;
+        this.assigneeName = assigneeName;
+        this.logedTime = logedTime;
+        this.isFinished = isFinished;
     }
 
     public long getId() {
@@ -46,6 +56,14 @@ public class Task {
 
     public String getName() {
         return name;
+    }
+
+    public String getLogedTime() {
+        return logedTime;
+    }
+
+    public void setLogedTime(String logedTime) {
+        this.logedTime = logedTime;
     }
 
     public String getGroupName() {

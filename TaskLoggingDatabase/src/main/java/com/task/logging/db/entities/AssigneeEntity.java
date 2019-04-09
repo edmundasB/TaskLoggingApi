@@ -10,7 +10,7 @@ public class AssigneeEntity implements Serializable {
     @GeneratedValue
     private Long id;
     private String name;
-    @OneToMany(mappedBy="assignee")
+    @OneToMany(mappedBy="assignee", fetch = FetchType.EAGER)
     private List<TaskEntity> tasks;
 
     public AssigneeEntity(String name) {
